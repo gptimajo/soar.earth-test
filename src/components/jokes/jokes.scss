@@ -1,0 +1,28 @@
+.jokes {
+    .joke {
+        margin: 0;
+        text-align: center;
+        font-size: 200%;
+        padding: 10px 15px;
+
+        border-radius: 15px;
+        background-color: rgba(black, 0.25);
+
+        &:before {
+            content: "\201c";
+        }
+        &:after {
+            content: "\201d";
+        }
+
+        &.loading {
+            background: none;
+        }
+    }
+
+    & + .controls {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+    }
+}
