@@ -11,15 +11,19 @@ import { GetJokesType, getJokes as getJokesAPI } from "./api/jokes";
 function App() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    const [jokes, setJokes] = useState([""]);
+    const [jokes, setJokes] = useState(["Something went wrong!"]);
 
     const getJokes = async () => {
+        setError("");
         setLoading(true);
         try {
             const jokesResponse: GetJokesType = await getJokesAPI();
 
             if (Array.isArray(jokesResponse)) {
                 setJokes(jokesResponse.map(({ joke }) => joke));
+            }
+            else {
+                setError(jokesResponse.error);
             }
         } catch (e) {
             setError("Ooops... something went wrong!");

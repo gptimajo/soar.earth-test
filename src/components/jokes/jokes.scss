@@ -6,7 +6,7 @@
         padding: 10px 15px;
 
         border-radius: 15px;
-        background-color: rgba(black, 0.25);
+        background-color: rgba(cyan, 0.25);
 
         &:before {
             content: "\201c";
@@ -18,6 +18,11 @@
         &.loading {
             background: none;
         }
+    }
+
+    .error {
+        text-align: center;
+        color: red;
     }
 
     & + .controls {

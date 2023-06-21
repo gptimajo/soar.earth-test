@@ -14,9 +14,10 @@ interface JokesProps {
 
 const Jokes: React.FC<JokesProps> = ({ jokes, isLoading, error }) => {
     let renderedJokes: any;
+    
     if (!isLoading) {
         if (error !== "") {
-            renderedJokes = <p>Error!</p>;
+            renderedJokes = <p className="error">{error}</p>;
         } else {
             renderedJokes = jokes.map((jokeText, k) => {
                 return typeof jokeText === "string" && jokeText !== '' ? <Joke key={k} joke={jokeText} /> : <span key={k}></span>;

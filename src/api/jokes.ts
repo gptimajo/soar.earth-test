@@ -40,7 +40,6 @@ export const getJokes = async (): Promise<GetJokesType> => {
         throw getJokesResponse;
     }
   } catch (e) {
-    console.error(e);
-    return { error: "Something went wrong!" };
+    return { error: "Ooops... something went wrong! Please try again." };
   }
 };
